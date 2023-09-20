@@ -1,12 +1,15 @@
 const body = document.querySelector("body");
-const select = document.querySelector("#select");
+const themeselect = document.querySelector("#theme_sel");
+const langselect = document.querySelector("#lan_sel");
 
 window.addEventListener("load", start);
 
 function start() {
   body.dataset.theme = "dark";
-  select.value = "dark";
-  select.addEventListener("change", changeTheme);
+  themeselect.value = "dark";
+  themeselect.addEventListener("change", changeTheme);
+  langselect.value = "da";
+  langselect.addEventListener("change", changeLanguage);
 
   document.querySelector(".cat").addEventListener("mouseover", () => {
     // document.querySelector(".cat").style.cursor = "pointer";
@@ -24,7 +27,7 @@ function start() {
   });
 }
 
-//Theme switcher
+//Theme switcher and language
 function changeTheme(evt) {
   console.log("changeTheme");
 
@@ -36,6 +39,17 @@ function changeTheme(evt) {
     body.dataset.theme = "light";
     document.querySelector(".cat").classList.add("hide");
     document.querySelector(".sun").classList.remove("hide");
+  }
+}
+function changeLanguage(evt) {
+  console.log("changeLanguage");
+
+  if (evt.target.value === "en") {
+    document.querySelector("#da").classList.add("hide");
+    document.querySelector("#en").classList.remove("hide");
+  } else {
+    document.querySelector("#da").classList.remove("hide");
+    document.querySelector("#en").classList.add("hide");
   }
 }
 

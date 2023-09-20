@@ -11,17 +11,43 @@
     <header>
       <div>
         <label for="theme">Change theme:</label>
-        <select name="theme" id="select">
+        <select name="theme" id="theme_sel" class="select">
           <option value="dark">Dark</option>
           <option value="light">Light</option>
         </select>
       </div>
+      <div>
+        <label for="lang">Change language:</label>
+        <select name="lang" id="lan_sel" class="select">
+          <option value="da">Dansk</option>
+          <option value="en">English</option>
+        </select>
+      </div>
     </header>
-    <main>
+    <main id="da">
       <section id="welcome">
         <h1>hej!</h1>
         <h3>Mit navn er Freja og jeg søger en praktikplads til min uddannelse som multimediedesigner. Jeg er 23 år, studerer på Københavns Erhvervsakademi og går på frontend-linjen på 3. semester.</h3>
         <img src="assets/portrait.webp" alt="portrait" id="portrait" />
+      </section>
+      <section id="2">
+        <h3>
+          Uddannelsen indeholder flere spændende arbejdsområder, men jeg har helt tabt mit hjerte til kodningen. Jeg elsker udfordringen ved at skulle tænke problemløsende når jeg koder. Hvordan man kan løse et problem, så brugeren får den bedste
+          respons og oplevelse, samtidig med flowet kører så problemfrit og effektivt så muligt.
+        </h3>
+      </section>
+    </main>
+    <main id="en" class="hide">
+      <section id="welcome">
+        <h1>hello!</h1>
+        <h3>My name is Freja and I am looking for an internship for my education as a multimedia designer. I am 23 years old, studying at Copenhagen School of Design and Technology and taking the frontend line for the 3rd semester.</h3>
+        <img src="assets/portrait.webp" alt="portrait" id="portrait" />
+      </section>
+      <section id="2">
+        <h3>
+          The education contains several exciting work areas, but I have completely lost my heart for coding. I love the challenge of having to think problem-solving when I code. How to solve a problem so that the user gets the best response and
+          experience, while the flow runs as smoothly and efficiently as possible.
+        </h3>
       </section>
     </main>
     <footer>
