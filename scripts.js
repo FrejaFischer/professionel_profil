@@ -23,3 +23,24 @@ function changeTheme(evt) {
     document.querySelector(".sun").classList.remove("hide");
   }
 }
+
+//Move Eyes
+//  left: 31%;
+// bottom: 49%;
+let currentX = "31%";
+let currentY = "49%";
+
+document.querySelector(".eyeball").style.setProperty("--x-pos", currentX);
+document.querySelector(".eyeball").style.setProperty("--y-pos", currentY);
+
+document.addEventListener("mousemove", change);
+
+function change(e) {
+  let x = 31 + (e.clientX / window.innerWidth) * 2;
+  currentX = `${x}%`;
+  let y = 50 - (e.clientY / window.innerWidth) * 2;
+  currentY = `${y}%`;
+
+  document.querySelector(".eyeball").style.setProperty("--x-pos", currentX);
+  document.querySelector(".eyeball").style.setProperty("--y-pos", currentY);
+}

@@ -3,7 +3,7 @@
 }
 [data-theme="light"] {
   --textColor: black;
-  --bgrColor: rgb(250, 238, 238);
+  --bgrColor: var(--white-color);
 }
 [data-theme="dark"] {
   --textColor: white;
@@ -14,12 +14,14 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   height: 100vh;
+  width: 100vw;
   margin: 0;
   font-family: "Courier New", Courier, monospace;
   color: var(--textColor);
   background-color: var(--bgrColor);
 }
 
+/* header */
 header {
   display: flex;
   justify-content: flex-end;
@@ -32,14 +34,57 @@ header {
   padding: 0.5em;
 }
 
+/* main */
+main {
+  display: grid;
+  justify-content: center;
+  margin: 1em 2em 1em 2em;
+  /* width: 100%; */
+}
+
+#welcome {
+  margin: 2em 0 2em 0;
+  height: 60vh;
+  width: 100%;
+  justify-content: center;
+}
+#portrait {
+  height: 60vh;
+}
+
+@media (min-width: 650px) {
+  #welcome {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+  }
+  #portrait {
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+  #welcome h1 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin-left: 1em;
+  }
+  #welcome h3 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin-left: 1em;
+  }
+}
+
+/* footer */
+footer {
+  background-color: transparent;
+  background: fixed;
+}
 .cat,
 .sun {
   display: flex;
   position: relative;
   height: 5em;
   width: fit-content;
-  /* background-image: radial-gradient(ellipse at bottom left, white 50%, black 60%);
-  background-size: cover; */
 }
 .catbody {
   align-self: first baseline;
@@ -47,9 +92,9 @@ header {
 }
 .eyeball {
   position: absolute;
-  left: 32%;
-  top: 41%;
-  height: 9.5%;
+  left: var(--x-pos);
+  bottom: var(--y-pos);
+  height: 10%;
 }
 
 .hide {
