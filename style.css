@@ -4,10 +4,14 @@
 [data-theme="light"] {
   --textColor: black;
   --bgrColor: var(--white-color);
+  --select-bg: lightgrey;
+  --select-color: black;
 }
 [data-theme="dark"] {
   --textColor: white;
   --bgrColor: black;
+  --select-bg: rgb(98, 98, 98);
+  --select-color: white;
 }
 
 body {
@@ -19,6 +23,7 @@ body {
   font-family: "Courier New", Courier, monospace;
   color: var(--textColor);
   background-color: var(--bgrColor);
+  hyphens: auto;
 }
 
 /* header */
@@ -28,7 +33,8 @@ header {
   margin: 1em 2em 1em 2em;
 }
 #select {
-  background-color: var(--white-color);
+  background-color: var(--select-bg);
+  color: var(--select-color);
   border-style: none;
   border-radius: 0.5em;
   padding: 0.5em;
@@ -96,7 +102,33 @@ footer {
   bottom: var(--y-pos);
   height: 10%;
 }
+.eyeball_big {
+  position: absolute;
+  left: 29%;
+  bottom: 49%;
+  height: 10%;
+}
 
+/* Animations */
 .hide {
   display: none;
+}
+.disappear {
+  animation: disappear 0.4s;
+}
+@keyframes disappear {
+  to {
+    opacity: 0;
+  }
+}
+.appear {
+  animation: appear 0.4s;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
 }
