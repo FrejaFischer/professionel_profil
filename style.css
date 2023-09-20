@@ -17,9 +17,9 @@
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  height: 100vh;
+  height: fit-content;
   width: 100vw;
-  margin: 0;
+  margin-bottom: 3em;
   font-family: "Courier New", Courier, monospace;
   color: var(--textColor);
   background-color: var(--bgrColor);
@@ -50,9 +50,10 @@ main {
 
 #welcome {
   margin: 2em 0 2em 0;
-  height: 60vh;
-  width: 100%;
+  height: fit-content;
+  width: 60%;
   justify-content: center;
+  justify-self: center;
 }
 #portrait {
   height: 60vh;
@@ -63,6 +64,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 2fr;
+    height: 60vh;
   }
   #portrait {
     grid-column: 1/2;
@@ -79,11 +81,20 @@ main {
     margin-left: 1em;
   }
 }
-
+.content {
+  margin: 2em 0 2em 0;
+  width: 60%;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 /* footer */
 footer {
   background-color: transparent;
-  background: fixed;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 .cat,
 .sun {
