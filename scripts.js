@@ -1,6 +1,18 @@
 const body = document.querySelector("body");
 const themeselect = document.querySelector("#theme_sel");
 const langselect = document.querySelector("#lan_sel");
+const allSections = document.querySelectorAll(".noshow");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
+});
+
+allSections.forEach((element) => observer.observe(element));
 
 window.addEventListener("load", start);
 
