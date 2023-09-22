@@ -1,6 +1,8 @@
 const body = document.querySelector("body");
 const themeselect = document.querySelector("#theme_sel");
 const langselect = document.querySelector("#lan_sel");
+const eyeball = document.querySelector(".eyeball");
+const eyeballBig = document.querySelector(".eyeball_big");
 const allSections = document.querySelectorAll(".noshow");
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -20,22 +22,24 @@ function start() {
   body.dataset.theme = "dark";
   themeselect.value = "dark";
   themeselect.addEventListener("change", changeTheme);
+  themeselect.addEventListener("mouseover", () => {
+    eyeball.style.display = "none";
+    eyeballBig.style.display = "block";
+  });
+  themeselect.addEventListener("mouseout", () => {
+    eyeball.style.display = "block";
+    eyeballBig.style.display = "none";
+  });
   langselect.value = "da";
   langselect.addEventListener("change", changeLanguage);
 
   document.querySelector(".cat").addEventListener("mouseover", () => {
-    // document.querySelector(".cat").style.cursor = "pointer";
-    document.querySelector(".eyeball").classList.add("disappear");
-    document.querySelector(".eyeball").classList.add("hide");
-    document.querySelector(".eyeball_big").classList.remove("hide");
-    document.querySelector(".eyeball_big").classList.add("appear");
+    eyeball.style.display = "none";
+    eyeballBig.style.display = "block";
   });
   document.querySelector(".cat").addEventListener("mouseout", () => {
-    document.querySelector(".eyeball").classList.remove("disappear");
-    document.querySelector(".eyeball").classList.remove("hide");
-    document.querySelector(".eyeball").classList.add("appear");
-    document.querySelector(".eyeball_big").classList.remove("appear");
-    document.querySelector(".eyeball_big").classList.add("hide");
+    eyeball.style.display = "block";
+    eyeballBig.style.display = "none";
   });
 }
 
@@ -66,8 +70,6 @@ function changeLanguage(evt) {
 }
 
 //Move Eyes
-//  left: 31%;
-// bottom: 49%;
 let currentX = "31%";
 let currentY = "49%";
 
